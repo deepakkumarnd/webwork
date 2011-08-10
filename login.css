@@ -1,0 +1,47 @@
+/* This is the stylesheet for login page. */
+
+header{
+    background-color: #D3D3D3;
+}
+
+body{
+    background-color: #B0C4DE;
+}
+
+.header h2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+/*
+.outer{
+    float: left;
+}*/
+
+.login{
+    background-color: #D3D3D3;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+    width: 25%;
+    
+}
+.login#legend{
+    
+}
+
+#erruname{
+    float: left;
+    color: red;
+}
+
+.foot{
+    background-color: #D3D3D3;
+}
+
+.foot p{    
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
