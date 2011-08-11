@@ -1,0 +1,71 @@
+
+.outer{
+  position: relative;
+  padding: 20px;
+  margin: 2px;
+  border-style:solid;
+  border-radius:15px;
+  width: 260px;
+  background: 	#8B4513;
+  
+}
+
+#txt{
+  padding: 2px;
+  margin:2px;
+  height:22px;
+  border-style:solid;
+  border-radius: 7px;
+  border-color: black;
+  
+}
+
+#del{
+  padding: 2px;
+  width: 40px;
+  margin: 2px;
+  background:gray;
+  border-style:solid;
+  border-radius: 7px;
+  border-color: black;
+}
+
+.numpad{
+  margin:2px;
+  padding:2px;
+  width:260px;
+}
+.numpad input{
+  padding: 2px;
+  margin:2px;
+  width:40px;
+  background: gray;
+  border-style:solid;
+  border-radius: 7px;
+  border-color: black;
+}
+
+.res{
+  padding:2px;
+  margin:2px;
+}
+
+#decpnt{
+  padding: 2px;
+  margin:2px;
+  width:40px;
+  background: gray;
+  border-style:solid;
+  border-radius: 7px;
+  border-color: black;
+}
+#ans{
+  height: 28px;
+  margin-right:0px;
+  background: gray;
+  border-style:solid;
+  border-radius: 7px;
+  border-color: black;
+}
+
+
