@@ -1,0 +1,48 @@
+
+.dropdownmenu{
+  width:594px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+ul{
+		list-style: none;
+		display: inline;
+	  float:left; 
+		padding: 0px;
+		margin:0px;
+}
+
+.dropdown{
+    display: block;
+    background: url("oie_png.jpg") no-repeat;
+    margin: 2px;
+    padding:2px;
+    width:122px;
+    height:20px;
+    font-size:14px;
+    color:#000;
+    text-align:center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul li a:hover{
+    color: #778899;
+}
+.sublink{
+		display:none;
+}
+.sublink a{
+  display:block;
+  background: url("oie_png.jpg") no-repeat;
+  margin:2px;
+  padding:2px;
+  width:122px;
+  height:20px;
+  font-size:14px;
+  color:#000;
+  text-align:center;
+  text-decoration: none;
+}

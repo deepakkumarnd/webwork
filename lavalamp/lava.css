@@ -30,7 +30,8 @@
 }
 
 .menu li a {
-     position: relative; overflow: hidden;
+     position: relative; 
+     overflow: hidden;
      text-decoration: none;
      text-transform: uppercase;
      font: bold 14px arial;
