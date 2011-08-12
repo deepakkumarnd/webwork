@@ -17,7 +17,7 @@ ul{
 .dropdown{
     display: block;
     background: url("oie_png.jpg") no-repeat;
-    margin: 2px;
+    margin: 1px;
     padding:2px;
     width:122px;
     height:20px;
@@ -37,7 +37,7 @@ ul li a:hover{
 .sublink a{
   display:block;
   background: url("oie_png.jpg") no-repeat;
-  margin:2px;
+  margin:1px;
   padding:2px;
   width:122px;
   height:20px;

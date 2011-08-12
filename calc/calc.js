@@ -12,6 +12,33 @@ $(document).ready(function(){
     temp=temp.slice(0,temp.length-1);
     $("#txt").attr('value',temp);
   });
+  $("#ans").click(function(){
+    var exp=$("#txt").val();
+    var ans=0;
+    try{
+      ans=eval(exp);
+      $("#txt").html(ans);
+    }
+    catch(e){
+      $(".message").html("Invalid expression");  
+    }    
+  });
+});
+
+/* 
+$(document).ready(function(){
+  $("#txt").focus();
+  $("#txt").click(function(){
+    $(this).attr('value','');
+  }); 
+  $(".key").click(function(){
+    $("#txt").attr('value',$("#txt").val()+$(this).val());
+  });
+  $("#del").click(function(){
+    var temp=$("#txt").val();
+    temp=temp.slice(0,temp.length-1);
+    $("#txt").attr('value',temp);
+  });
   $("#decpnt").click(function(){
     if(($("#txt").val().indexOf("."))<0){
       $("#txt").attr('value',$("#txt").val()+$(this).val());
@@ -64,7 +91,12 @@ $(document).ready(function(){
       var sum=new Number((list[0].valueOf()*1)+(list[1].valueOf()*1));
       $("#txt").attr('value',sum.toString());
     } */
+    
+    /*
     var sum=new Number(ans);
      $("#txt").attr('value',sum.toString());
   });
 });
+
+
+*/
