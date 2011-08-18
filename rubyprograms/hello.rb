@@ -1,47 +1,62 @@
-=begin
- 	This is  a multiline comment.
-	This is  a multiline comment.
-=end 
+#!/bin/ruby
 
-# This is a single line comment.
+class Node
+	def initialize data
+		@data=data
+		@left=nil
+		@right=nil
+	end
+end
 
-puts 'hello'
-p 'hello'
-print 'hello'
-# p004stringusage.rb  
-# Defining a constant  
-PI = 3.1416  
-puts PI  
-# Defining a local variable  S
-myString = 'I love my city, Pune'  
-puts myString  
-=begin  
-Conversions  
-.to_i, .to_f, .to_s  
-=end  
-var1 = 5;  
-var2 = '2'  
-puts var1 + var2.to_i  
-# << appending to a string  
-a = 'hello '  
-a<<'world. 
-I love this world...'  
-puts a  
-=begin  
-<< marks the start of the string literal and  
-is followed by a delimiter of your choice.  
-The string literal then starts from the next  
-new line and finishes when the delimiter is  
-repeated again on a line on its own. This is known as  
-Here document syntax.  
-=end  
-#a = <<END_STR  
-#This is the string  
-#And a second line  
-#END_STR  
-#puts a 
+class Tree
+	def initialize
+		@root=nil
+	end
+	
+	def add_node data
+		#@root=Node.new(data) unless @root
+		if @root == nil
+			@root=Node.new(data)
+			return
+		end
+		
+		temp=@root
+		while true 
+			if temp.data > data
+				if temp.left
+					temp=temp.left
+				else
+					temp.left=Node.new(data)
+					break
+				end
+			else
+				if temp.right
+					temp=temp.right
+				else
+					temp.right=Node.new(data)
+				end
+			end
+		end
+	end
+	
+	def inorder rt
+		if rt
+			inorder temp.left
+			puts temp.data
+			inorder temp.right
+		else
+			return
+		end
+	end
+	
+	def view
+		inorder @root
+	end
+end
 
-puts "What is ur name?"
-STDOUT.flush
-name=gets.chomp
-puts "the name is"+name
+
+T=Tree.new
+while true
+	puts "Input new item"
+	gets
+end
