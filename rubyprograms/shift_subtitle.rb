@@ -62,7 +62,7 @@ class Subsect
 			@end_msec+=((t[1].to_i)+(t[0].to_i)*1000)
 			@end_tm+=(@end_msec/1000);
 			@end_msec%=1000;
-		elsif $options[:operation]=="sub"
+		elsif $options[:operation]==:sub
 			@st_tm-=t[0].to_i
 			if @st_msec> t[1].to_i
 				@st_msec-=t[1].to_i

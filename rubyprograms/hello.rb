@@ -58,5 +58,6 @@ end
 T=Tree.new
 while true
 	puts "Input new item"
-	gets
+	n=gets
+	T.add_node n.to_i
 end
