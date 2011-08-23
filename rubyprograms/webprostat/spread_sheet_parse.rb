@@ -2,16 +2,18 @@
 
 require'rubygems'
 require'roo'
+require 'spreadsheet'
 
 
 class Parsesheet
 	STARTCOLUMN=7
 	STARTROW=5
-	def initialize filename
+	def initialize in_file,out_file
 		@week_count=0
 		@output=[]
 		begin
-			@sheet=Openoffice.new(filename)
+			@outputfile=out_file
+			@sheet=Openoffice.new(in_file)
 			@sheet.default_sheet=@sheet.sheets.first
 		rescue
 			puts "Cannot open the spreadsheet file #{filename}"
@@ -79,14 +81,39 @@ class Parsesheet
 		@output
 	end
 	
-	def write_to_sheet
+	def write_to_sheet 
+		Spreadsheet.client_encoding='UTF-8'
+		book=Spreadsheet::Workbook.new
+		sheet1=book.create_worksheet
+		sheet1[0,0]="Project Name"
+		sheet1[0,1]="Resource Name"
+		sheet1[0,2]="Number of hours"
+		row=1
+        format = Spreadsheet::Format.new :color => :red
+                                 
+		@output.each do |project|	
+		 sheet1[row,0]=project[0].encode("UTF-8")
+		 sheet1.row(row).default_format=format
+			row+=1
+       		 project[1].each do |programmer| 
+				sheet1[row,1]=programmer[0].encode("UTF-8")
+				sheet1[row,2]=programmer[1]
+				row+=1
+			end		
+		end
+		book.write(@outputfile)
 	end
 
 end
 
+if ARGV.length!=2 
+	puts "Usage: spread_sheet_parse <inputfile> <outputfile> \n eg ./spread_sheet_parse a.ods b.xls"
+	exit
+end
 
-sh=Parsesheet.new("exp.ods")  # put your file name here
+sh=Parsesheet.new(ARGV[0],ARGV[1])  # put your file name here
 sh.check_no_weeks
 sh.find_column_indexes
 sh.find_row_indexes
-puts sh.calculate_gross_work_time[1] 
+sh.calculate_gross_work_time
+sh.write_to_sheet 
