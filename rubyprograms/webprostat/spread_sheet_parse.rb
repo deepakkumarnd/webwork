@@ -66,10 +66,12 @@ class Parsesheet
 			record.push(@sheet.cell(row,1))     # pushing the project name
 			@colindexes.each do |col|
 				(1..@week_count).each { |wk| sum+=@sheet.cell(row,col+wk-1).to_f }
-				hash[@sheet.cell(1,col)]=sum
+				if sum >0
+					hash[@sheet.cell(1,col)]=sum
+				end
 				sum=0
 			end
-			record.push(hash)
+			record.push(hash)                   #pushing the code worktime details of each person
 			hash={}
 			@output.push(record)
 			record=[]
@@ -83,8 +85,8 @@ class Parsesheet
 end
 
 
-sh=Parsesheet.new("exp.ods")
-puts sh.check_no_weeks
+sh=Parsesheet.new("exp.ods")  # put your file name here
+sh.check_no_weeks
 sh.find_column_indexes
 sh.find_row_indexes
-puts sh.calculate_gross_work_time 
+puts sh.calculate_gross_work_time[1] 
